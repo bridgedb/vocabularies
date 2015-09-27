@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html prefix="bridgedb: http://vocabularies.bridgedb.org/ops#" lang="en">
+<html prefix="bridgedb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void#" lang="en">
 <head>
   <title>BridgeDb ontology</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
@@ -26,6 +26,10 @@ This page describes the BridgeDb ontology. Make sure to visit our <a rel="rdfs:s
 <h3 property="rdfs:label">Linkset</h3>
 <p>Class from the <a property="rdfs:isDefinedBy" href="http://rdfs.org/ns/void#">VoID Ontology</a>.</p>
 </div>
+<div about="http://www.w3.org/2004/02/skos/core#Concept" typeof="owl:Class">
+<h3 property="rdfs:label">Concept</h3>
+<p>Class from the <a property="rdfs:isDefinedBy" href="http://www.w3.org/2004/02/skos/core">SKOS Ontology</a>.</p>
+</div>
 <div id="CodeMapper" about="http://vocabularies.bridgedb.org/ops#DataSourceCodeMapper" typeof="owl:Class">
 <h3 property="rdfs:label">Code Mapper</h3>
 </div>
@@ -42,10 +46,13 @@ This page describes the BridgeDb ontology. Make sure to visit our <a rel="rdfs:s
 <div id="UriPattern" about="http://vocabularies.bridgedb.org/ops#UriPattern" typeof="owl:Class">
 <h3 property="rdfs:label">URI Pattern</h3>
 </div>
+<div id="Transitive" about="http://vocabularies.bridgedb.org/ops#Transitive" typeof="owl:Class">
+<h3 property="rdfs:label">Transitive</h3>
+</div>
 
 
 <h2>Object Properties</h2>
-<div id="aboutOrganism" about="http://vocabularies.bridgedb.org/ops#Organism" typeof="owl:ObjectProperty">
+<div id="aboutOrganism" about="http://vocabularies.bridgedb.org/ops#aboutOrganism" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">About Organism</h3>
 <p><span property="dc:description">Organism for all entities with identifiers from this datasource.</span>
 This property has
@@ -54,6 +61,46 @@ This property has
   <a property="rdfs:range" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
   as range.</p>
 </div>
+<div id="assertionMethod" about="http://vocabularies.bridgedb.org/ops#assertionMethod" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Assertion Method</h3>
+<p><span property="dc:description">The method by which the links in the Linkset have been asserted.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">Linkset</a>
+  as domain.</p>
+</div>
+<div id="fulfillsLens" about="http://vocabularies.bridgedb.org/ops#fulfillsLens" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Fulfills Lens</h3>
+<p>This property has <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">Linkset</a> as domain.</p>
+</div>
+<div id="hasDataType" about="http://vocabularies.bridgedb.org/ops#hasDataType" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Has Data Type</h3>
+<p>This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div>
+<div id="hasDataSource" about="http://vocabularies.bridgedb.org/ops#hasDataSource" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Has Data Source</h3>
+</div>
+<div id="hasPrimaryUriPattern" about="http://vocabularies.bridgedb.org/ops#hasPrimaryUriPattern" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Primary URI Pattern</h3>
+<p><span property="dc:description">The primary URI pattern for identifiers from this data source. There can be only one.</span>
+This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and is subproperty of
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+</div>
+<div id="hasIdentifiersOrgPattern" about="http://vocabularies.bridgedb.org/ops#hasIdentifiersOrgPattern" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Identifiers.org URL</h3>
+<p><span property="dc:description">Identifiers.org URL for identifiers from this data source.</span>
+This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and is subproperty of
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+</div>
+
+
 
 <h2>Data Properties</h2>
 <div id="fullName" about="http://vocabularies.bridgedb.org/ops#fullName" typeof="owl:DatatypeProperty">   
@@ -111,21 +158,8 @@ This property has
 <p><span property="dc:description">A URI pattern for identifiers from this data source. Can be more than one.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
-  as domain.</p>
-</div>
-<div id="hasPrimaryUriPattern" about="http://vocabularies.bridgedb.org/ops#hasPrimaryUriPattern" typeof="owl:DatatypeProperty">
-<h3 property="rdfs:label">Primary URI Pattern</h3>
-<p><span property="dc:description">The primary URI pattern for identifiers from this data source. There can be only one.</span>
-This property has
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
-  as domain.</p>
-</div>
-<div id="hasIdentifiersOrgPattern" about="http://vocabularies.bridgedb.org/ops#hasIdentifiersOrgPattern" typeof="owl:DatatypeProperty">
-<h3 property="rdfs:label">Identifiers.org URL</h3>
-<p><span property="dc:description">Identifiers.org URL for identifiers from this data source.</span>
-This property has
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
-  as domain.</p>
+  as domain and is subproperty of
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
 <div id="code" about="http://vocabularies.bridgedb.org/ops#code" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Organism Code</h3>
@@ -141,8 +175,7 @@ This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
   as domain.</p>
 </div>
-<div id="latinName" about="http://vocabularies.bridgedb.org/ops#latinName" 
-typeof="owl:DatatypeProperty">
+<div id="latinName" about="http://vocabularies.bridgedb.org/ops#latinName" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Latin Name</h3>
 <p><span property="dc:description">Latin name of the organism.</span>
 This property has
