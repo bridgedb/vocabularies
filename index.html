@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html prefix="bridgedb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void#" lang="en">
 <head>
@@ -89,7 +90,7 @@ This property has
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and is subproperty of
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+  <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
 <div id="hasIdentifiersOrgPattern" about="http://vocabularies.bridgedb.org/ops#hasIdentifiersOrgPattern" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Identifiers.org URL</h3>
@@ -97,8 +98,77 @@ This property has
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and is subproperty of
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+  <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
+<div id="hasUriPattern" about="http://vocabularies.bridgedb.org/ops#hasUriPattern" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Has URI Pattern</h3>
+<p><span property="dc:description">A URI pattern for identifiers from this data source. Can be more than one.</span>
+This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and is subproperty of
+  <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+</div>
+<div id="isTransitiveVia" about="http://vocabularies.bridgedb.org/ops#isTransitiveVia" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Is Transitive Via</h3>
+<p>This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and
+  <a property="rdfs:range" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a> as range.</p>
+</div>
+<div id="isUriPatternOf" about="http://vocabularies.bridgedb.org/ops#isUriPatternOf" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Is URI Pattern Of</h3>
+<p>This property is the inverse of
+  <a property="owl:" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+</div>
+
+<div id="linksetJustification" about="http://vocabularies.bridgedb.org/ops#linksetJustification" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Linkset Justification</h3>
+<p><span property="rdfs:comment">The reason why the Linkset claims these concepts are equivalent.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div>
+<div id="objectsDatatype" about="http://vocabularies.bridgedb.org/ops#objectsDatatype" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Object's Datatype</h3>
+<p><span property="rdfs:comment">The type of concept the objects of the triples in the Linkset represent.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div>
+<div id="objectsSpecies" about="http://vocabularies.bridgedb.org/ops#objectsSoecies" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Object's Species</h3>
+<p><span property="rdfs:comment">The species of concept the objects of the triples in the Linkset represent.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div> 
+<div id="subjectsDatatype" about="http://vocabularies.bridgedb.org/ops#subjectsDatatype" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Subject's Datatype</h3>
+<p><span property="rdfs:comment">The type of concept the subjects of the triples in the Linkset represent.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div>
+<div id="subjectsSpecies" about="http://vocabularies.bridgedb.org/ops#subjectsSoecies" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">Subject's Species</h3>
+<p><span property="rdfs:comment">The species of concept the subjects of the triples in the Linkset represent.</span>
+This property has
+  <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
+  as range.</p>
+</div>
+
+
+
 
 
 
@@ -153,14 +223,6 @@ This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
-<div id="hasUriPattern" about="http://vocabularies.bridgedb.org/ops#hasUriPattern" typeof="owl:DatatypeProperty">
-<h3 property="rdfs:label">URI Pattern</h3>
-<p><span property="dc:description">A URI pattern for identifiers from this data source. Can be more than one.</span>
-This property has
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
-  as domain and is subproperty of
-  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
-</div>
 <div id="code" about="http://vocabularies.bridgedb.org/ops#code" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Organism Code</h3>
 <p><span property="dc:description">Short code for an organism. Normally is one or two characters long.</span>
@@ -194,3 +256,4 @@ also
 useful.
 </p>
 </body>
+
