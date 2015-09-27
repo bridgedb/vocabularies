@@ -7,10 +7,12 @@
 </head>
 <body>
 <img src="http://www.bridgedb.org/bdb-logo.png" alt="The BridgeDb logo: the name in black with a white bridge crossing the characters." /><br />
-<h1>The BridgeDb Ontology</h1>
+<div about="http://vocabularies.bridgedb.org/ops#" typeof="owl:Ontology">
+<h1>The <span property="rdfs:label">BridgeDb DataSource Ontology</span> (version <span property="owl:versionInfo">2.1.0</span>)</h1>
 <p>
-This page describes the BridgeDb ontology. Make sure to visit our <a href="http://www.bridgedb.org/">homepage</a> too!
+This page describes the BridgeDb ontology. Make sure to visit our <a rel="rdfs:seeAlso" href="http://www.bridgedb.org/">homepage</a> too!
 </p>
+</div>
 <h2>Classes</h2>
 <div id="DataSource" about="http://vocabularies.bridgedb.org/ops#DataSource" typeof="owl:Class">
 <h3 property="rdfs:label">Data Source</h3>
@@ -20,6 +22,39 @@ This page describes the BridgeDb ontology. Make sure to visit our <a href="http:
 <h3 property="rdfs:label">Organism</h3>
 <p><span property="dc:description">An organism.</span>
 </div>
+<div about="http://rdfs.org/ns/void#Linkset" typeof="owl:Class">
+<h3 property="rdfs:label">Linkset</h3>
+<p>Class from the <a rel="rdfs:isDefinedBy" href="http://rdfs.org/ns/void#">VoID Ontology</a>.</p>
+</div>
+<div id="CodeMapper" about="http://vocabularies.bridgedb.org/ops#DataSourceCodeMapper" typeof="owl:Class">
+<h3 property="rdfs:label">Code Mapper</h3>
+</div>
+<div id="" about="http://vocabularies.bridgedb.org/ops#IdentifiersOrgInfoPattern" typeof="owl:Class">
+<h3 property="rdfs:label">Identifiers.org Info Pattern</h3>
+</div>
+<div id="" about="http://vocabularies.bridgedb.org/ops#IdentifiersOrgPattern" typeof="owl:Class">
+<h3 property="rdfs:label">Identifiers.org Pattern</h3>
+<p>It class extends <a href="http://vocabularies.bridgedb.org/ops#UriPattern" rel="rdfs:subClassOf">URI Pattern</a>.</p>
+</div>
+<div id="Lens" about="http://vocabularies.bridgedb.org/ops#Lens" typeof="owl:Class">
+<h3 property="rdfs:label">Lens</h3>
+</div>
+<div id="UriPattern" about="http://vocabularies.bridgedb.org/ops#UriPattern" typeof="owl:Class">
+<h3 property="rdfs:label">URI Pattern</h3>
+</div>
+
+
+<h2>Object Properties</h2>
+<div id="aboutOrganism" about="http://vocabularies.bridgedb.org/ops#Organism" typeof="owl:ObjectProperty">
+<h3 property="rdfs:label">About Organism</h3>
+<p><span property="dc:description">Organism for all entities with identifiers from this datasource.</span>
+This property has
+  <a rel="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
+  as domain and
+  <a rel="rdfs:range" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
+  as range.</p>
+</div>
+
 <h2>Data Properties</h2>
 <div id="fullName" about="http://vocabularies.bridgedb.org/ops#fullName" typeof="owl:DatatypeProperty">   
 <h3 property="rdfs:label">Full Name</h3>  
@@ -92,13 +127,6 @@ This property has
   <a rel="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
-<div id="Organism" about="http://vocabularies.bridgedb.org/ops#Organism" typeof="owl:DatatypeProperty">
-<h3 property="rdfs:label">Organism</h3>
-<p><span property="dc:description">Organism for all entities with identifiers from this datasource.</span>
-This property has
-  <a rel="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
-  as domain.</p>
-</div>
 <div id="code" about="http://vocabularies.bridgedb.org/ops#code" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Organism Code</h3>
 <p><span property="dc:description">Short code for an organism. Normally is one or two characters long.</span>
@@ -123,9 +151,12 @@ This property has
 </div>
 
 <h1>Technical notes</h1>
-<p>
+<p about="http://vocabularies.bridgedb.org/ops#">
 The conversion of ops#foo to index.html#foo is done with .htaccess and a RewriteRule.
 The source code is available from the <a href="https://github.com/bridgedb/vocabulary/">vocabulary</a>
-repository at GitHub. The OWL ontology can be extracted <a href="http://www.w3.org/2012/pyRdfa/extract?uri=http://vocabularies.bridgedb.org/ops">here</a>.
+repository at GitHub. The OWL ontology can be extracted <a rel="owl:versionIRI" 
+href="http://www.w3.org/2012/pyRdfa/extract?uri=http://vocabularies.bridgedb.org/ops#">here</a>.
+The Open PHACTS specification on <a rel="rdf:seeAlso" href="http://www.openphacts.org/specs/2013/WD-datadesc-20130912/#bridgedb">Dataset Descriptions</a> is also 
+useful.
 </p>
 </body>
