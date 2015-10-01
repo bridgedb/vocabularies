@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="bridgedb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void#" lang="en">
+<html prefix="bridgedb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void# prov: http://www.w3.org/ns/prov# dcterms: http://purl.org/dc/terms/"  lang="en">
 <head>
   <title>BridgeDb ontology</title>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" /> 
@@ -289,10 +289,24 @@ This property has
 <h1>Technical notes</h1>
 <p about="http://vocabularies.bridgedb.org/ops#">
 The conversion of ops#foo to index.html#foo is done with .htaccess and a RewriteRule.
-The source code is available from the <a href="https://github.com/bridgedb/vocabulary/">vocabulary</a>
-repository at GitHub. The OWL ontology can be extracted <a property="owl:versionIRI" 
-href="http://www.w3.org/2012/pyRdfa/extract?uri=http://vocabularies.bridgedb.org/ops#">here</a>.
-The Open PHACTS specification on <a property="rdf:seeAlso" href="http://www.openphacts.org/specs/2013/WD-datadesc-20130912/#bridgedb">Dataset Descriptions</a> is 
+The source code is available from the <a property="prov:specializationOf" href="https://github.com/bridgedb/vocabulary/">bridgedb/vocabulary</a>
+repository at GitHub, see also the <a property="prov:has_provenance" href="https://github.com/bridgedb/vocabulary/commits/master/index.html">recent changes</a>.
+</p>
+
+<p about="http://vocabularies.bridgedb.org/ops#">
+This OWL ontology can be extracted as the RDF formats
+<a rev="prov:specializationOf" rel="dcterms:alternate" 
+href="http://rdf.greggkellogg.net/distiller?format=turtle&amp;in_fmt=rdfa&amp;uri=http://vocabularies.bridgedb.org/ops#">Turtle</a>, 
+<a rev="prov:specializationOf" rel="dcterms:alternate" 
+href="http://rdf.greggkellogg.net/distiller?format=jsonld&amp;in_fmt=rdfa&amp;uri=http://vocabularies.bridgedb.org/ops#">JSON-LD</a>, 
+<a rev="prov:specializationOf" rel="dcterms:alternate" 
+href="http://rdf.greggkellogg.net/distiller?format=ntriples&amp;in_fmt=rdfa&amp;uri=http://vocabularies.bridgedb.org/ops#">N-Triples</a> or 
+<a rev="prov:specializationOf" rel="dcterms:alternate" 
+href="http://rdf.greggkellogg.net/distiller?format=rdfxml&amp;in_fmt=rdfa&amp;uri=http://vocabularies.bridgedb.org/ops#">RDF/XML</a>.
+</p>
+
+<p about="http://vocabularies.bridgedb.org/ops#">
+The Open PHACTS specification on <a property="rdfs:seeAlso" href="http://www.openphacts.org/specs/2013/WD-datadesc-20130912/#bridgedb">Dataset Descriptions</a> is 
 also 
 useful.
 </p>
