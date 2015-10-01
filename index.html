@@ -23,9 +23,13 @@
     visibility: hidden;
   }
 
-  /* cleaner separation */
+  /* cleaner section separation */
   section {
     margin-top: 2em;
+  }
+  section h2 {
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #ddd;
   }
 
   /* For scrollspy */
@@ -395,7 +399,7 @@ This property has
 
 
 <section id="_technical">
-<h1>Technical notes</h1>
+<h2>Technical notes</h2>
 <p about="http://vocabularies.bridgedb.org/ops#">
 The conversion of ops#foo to index.html#foo is done with .htaccess and a RewriteRule.
 The source code is available from the <a property="prov:specializationOf" href="https://github.com/bridgedb/vocabulary/">bridgedb/vocabulary</a>
@@ -425,4 +429,5 @@ useful.
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
