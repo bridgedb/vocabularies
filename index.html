@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="bdb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void# prov: http://www.w3.org/ns/prov# dcterms: http://purl.org/dc/terms/" >
+<html lang="en" prefix="bdb: http://vocabularies.bridgedb.org/ops# skos: http://www.w3.org/2004/02/skos/core# void: http://rdfs.org/ns/void# prov: http://www.w3.org/ns/prov# dcterms: http://purl.org/dc/terms/ xsd: http://www.w3.org/2001/XMLSchema# ">
 <head>
   <!-- bootstrap stuff -->
   <meta charset="utf-8">
@@ -90,8 +90,9 @@ This page describes the BridgeDb ontology <code>http://vocabularies.bridgedb.org
 
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd:&lt; http://www.w3.org/2001/XMLSchema#&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
 @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
 </pre>
 </section>
@@ -126,9 +127,9 @@ This page describes the BridgeDb ontology <code>http://vocabularies.bridgedb.org
 <p>Class from the <a property="rdfs:isDefinedBy" href="http://www.w3.org/2004/02/skos/core">SKOS Ontology</a>.</p>
 </div>
 
-<div id="CodeMapper" about="http://vocabularies.bridgedb.org/ops#DataSourceCodeMapper" typeof="owl:Class">
+<div id="CodeMapper" about="http://vocabularies.bridgedb.org/ops#CodeMapper" typeof="owl:Class">
 <h3 property="rdfs:label">Code Mapper</h3>
-<code property="skos:prefLabel">bdb:DataSourceCodeMapper</code>
+<code property="skos:prefLabel">bdb:CodeMapper</code>
 </div>
 
 <div id="IdentifiersOrgInfoPattern" about="http://vocabularies.bridgedb.org/ops#IdentifiersOrgInfoPattern" typeof="owl:Class">
@@ -158,8 +159,10 @@ This page describes the BridgeDb ontology <code>http://vocabularies.bridgedb.org
 </div>
 </section>
 
+
 <section id="_object_properties">
 <h2>Object Properties</h2>
+
 <div id="aboutOrganism" about="http://vocabularies.bridgedb.org/ops#aboutOrganism" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">About Organism</h3>
 <code property="skos:prefLabel">bdb:aboutOrganism</code>
@@ -173,65 +176,83 @@ This property has
 
 <div id="assertionMethod" about="http://vocabularies.bridgedb.org/ops#assertionMethod" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Assertion Method</h3>
+<code property="skos:prefLabel">bdb:assertionMethod</code>
 <p><span property="dc:description">The method by which the links in the Linkset have been asserted.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">Linkset</a>
   as domain.</p>
 </div>
+
 <div id="fulfillsLens" about="http://vocabularies.bridgedb.org/ops#fulfillsLens" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Fulfills Lens</h3>
+<code property="skos:prefLabel">bdb:fulfillsLens</code>
 <p>This property has <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">Linkset</a> as domain.</p>
 </div>
+
 <div id="hasDataType" about="http://vocabularies.bridgedb.org/ops#hasDataType" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Has Data Type</h3>
+<code property="skos:prefLabel">bdb:hasDataType</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and
   <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
   as range.</p>
 </div>
+
 <div id="hasDataSource" about="http://vocabularies.bridgedb.org/ops#hasDataSource" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Has Data Source</h3>
+<code property="skos:prefLabel">bdb:hasDataSource</code>
 </div>
+
 <div id="hasPrimaryUriPattern" about="http://vocabularies.bridgedb.org/ops#hasPrimaryUriPattern" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Primary URI Pattern</h3>
+<code property="skos:prefLabel">bdb:hasPrimaryUriPattern</code>
 <p><span property="dc:description">The primary URI pattern for identifiers from this data source. There can be only one.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and is subproperty of
   <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
+
 <div id="hasIdentifiersOrgPattern" about="http://vocabularies.bridgedb.org/ops#hasIdentifiersOrgPattern" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Identifiers.org URL</h3>
+<code property="skos:prefLabel">bdb:hasIdentifiersOrgPattern</code>
 <p><span property="dc:description">Identifiers.org URL for identifiers from this data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and is subproperty of
   <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
+
 <div id="hasUriPattern" about="http://vocabularies.bridgedb.org/ops#hasUriPattern" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Has URI Pattern</h3>
+<code property="skos:prefLabel">bdb:hasUriPattern</code>
 <p><span property="dc:description">A URI pattern for identifiers from this data source. Can be more than one.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and is subproperty of
   <a property="rdfs:subPropertyOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
+
 <div id="isTransitiveVia" about="http://vocabularies.bridgedb.org/ops#isTransitiveVia" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Is Transitive Via</h3>
+<code property="skos:prefLabel">bdb:isTransitiveVia</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain and
   <a property="rdfs:range" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a> as range.</p>
 </div>
+
 <div id="isUriPatternOf" about="http://vocabularies.bridgedb.org/ops#isUriPatternOf" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Is URI Pattern Of</h3>
+<code property="skos:prefLabel">bdb:isUriPatternOf</code>
 <p>This property is the inverse of
-  <a property="owl:" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
+  <a property="owl:inverseOf" href="http://vocabularies.bridgedb.org/ops#hasUriPattern">has URI Pattern</a>.</p>
 </div>
 
 <div id="linksetJustification" about="http://vocabularies.bridgedb.org/ops#linksetJustification" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Linkset Justification</h3>
+<code property="skos:prefLabel">bdb:linksetJustification</code>
 <p><span property="rdfs:comment">The reason why the Linkset claims these concepts are equivalent.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
@@ -239,8 +260,10 @@ This property has
   <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
   as range.</p>
 </div>
+
 <div id="objectsDatatype" about="http://vocabularies.bridgedb.org/ops#objectsDatatype" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Object's Datatype</h3>
+<code property="skos:prefLabel">bdb:objectsDatatype</code>
 <p><span property="rdfs:comment">The type of concept the objects of the triples in the Linkset represent.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
@@ -248,8 +271,10 @@ This property has
   <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
   as range.</p>
 </div>
-<div id="objectsSpecies" about="http://vocabularies.bridgedb.org/ops#objectsSoecies" typeof="owl:ObjectProperty">
+
+<div id="objectsSpecies" about="http://vocabularies.bridgedb.org/ops#objectsSpecies" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Object's Species</h3>
+<code property="skos:prefLabel">bdb:objectsSpecies</code>
 <p><span property="rdfs:comment">The species of concept the objects of the triples in the Linkset represent.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
@@ -259,6 +284,7 @@ This property has
 </div>
 <div id="subjectsDatatype" about="http://vocabularies.bridgedb.org/ops#subjectsDatatype" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Subject's Datatype</h3>
+<code property="skos:prefLabel">bdb:subjectsDatatype</code>
 <p><span property="rdfs:comment">The type of concept the subjects of the triples in the Linkset represent.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
@@ -266,8 +292,9 @@ This property has
   <a property="rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">SKOS Concept</a>
   as range.</p>
 </div>
-<div id="subjectsSpecies" about="http://vocabularies.bridgedb.org/ops#subjectsSoecies" typeof="owl:ObjectProperty">
+<div id="subjectsSpecies" about="http://vocabularies.bridgedb.org/ops#subjectsSpecies" typeof="owl:ObjectProperty">
 <h3 property="rdfs:label">Subject's Species</h3>
+<code property="skos:prefLabel">bdb:subjectsSpecies</code>
 <p><span property="rdfs:comment">The species of concept the subjects of the triples in the Linkset represent.</span>
 This property has
   <a property="rdfs:domain" href="http://rdfs.org/ns/void#Linkset">VoID Linkset</a>
@@ -278,66 +305,86 @@ This property has
 </section>
 
 
-<section id="_data_propertyes">
+<section id="_data_properties">
 <h2>Data Properties</h2>
+
 <div id="fullName" about="http://vocabularies.bridgedb.org/ops#fullName" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Full Name</h3>
+<code property="skos:prefLabel">bdb:fullName</code>
 <p><span property="dc:description">The full name of the data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="systemCode" about="http://vocabularies.bridgedb.org/ops#systemCode" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">System Code</h3>
+<code property="skos:prefLabel">bdb:systemCode</code>
 <p><span property="dc:description">Short code unique for a data source. Often consisting of two or three characters.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="mainUrl" about="http://vocabularies.bridgedb.org/ops#mainUrl" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Main URL</h3>
+<code property="skos:prefLabel">bdb:mainUrl</code>
 <p><span property="dc:description">Main URL of the website of the data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="idExample" about="http://vocabularies.bridgedb.org/ops#idExample" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Example Identifier</h3>
+<code property="skos:prefLabel">bdb:idExample</code>
 <p><span property="dc:description">An example identifier for this data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="primary" about="http://vocabularies.bridgedb.org/ops#primary" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Is primary</h3>
+<code property="skos:prefLabel">bdb:primary</code>
 <p><span property="dc:description">This predicates can be used to indicate of this data source is a primary data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
-  as domain.</p>
+  as domain and
+  <a property="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean">XSD boolean</a> as range.
+  </p>
 </div>
+
 <div id="type" about="http://vocabularies.bridgedb.org/ops#type" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Entity Type</h3>
+<code property="skos:prefLabel">bdb:type</code>
 <p><span property="dc:description">Type of entity that are identified by identifiers from this data source. Example types
 include probe, gene, metabolite, and interaction.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="hasRegexPattern" about="http://vocabularies.bridgedb.org/ops#hasRegexPattern" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Has Regular Expression</h3>
+<code property="skos:prefLabel">bdb:hasRegexPattern</code>
 <p><span property="dc:description">The regular expression of the format of the identifiers of this data source.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
+
 <div id="hasRegexUriPattern" about="http://vocabularies.bridgedb.org/ops#hasRegexUriPattern" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Has URI Regular Expression</h3>
+<code property="skos:prefLabel">bdb:hasRegexUriPattern</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">DataSource</a>
   as domain.</p>
 </div>
 <div id="code" about="http://vocabularies.bridgedb.org/ops#code" typeof="owl:DatatypeProperty">
+
 <h3 property="rdfs:label">Organism Code</h3>
+<code property="skos:prefLabel">bdb:code</code>
 <p><span property="dc:description">Short code for an organism. Normally is one or two characters long.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
@@ -345,50 +392,70 @@ This property has
 </div>
 <div id="shortName" about="http://vocabularies.bridgedb.org/ops#shortName" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Short Name</h3>
+<code property="skos:prefLabel">bdb:shortName</code>
 <p><span property="dc:description">Short or common name of the organism.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
   as domain.</p>
 </div>
+
 <div id="latinName" about="http://vocabularies.bridgedb.org/ops#latinName" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Latin Name</h3>
+<code property="skos:prefLabel">bdb:latinName</code>
 <p><span property="dc:description">Latin name of the organism.</span>
 This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#Organism">Organism</a>
   as domain.</p>
 </div>
+
 <div id="hasPostfix" about="http://vocabularies.bridgedb.org/ops#hasPostfix" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Has Postfix</h3>
+<code property="skos:prefLabel">bdb:hasPostfix</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#UriPattern">URI Pattern</a>
   as domain.</p>
 </div>
+
 <div id="hasPrefix" about="http://vocabularies.bridgedb.org/ops#hasPrefix" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Has Prefix</h3>
+<code property="skos:prefLabel">bdb:hasPrefix</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#UriPattern">URI Pattern</a>
   as domain.</p>
 </div>
+
 <div id="isDeprecatedBy" about="http://vocabularies.bridgedb.org/ops#isDeprecatedBy" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Is Deprecated By</h3>
+<code property="skos:prefLabel">bdb:isDeprecatedBy</code>
 </div>
+
 <div id="isSymmetric" about="http://vocabularies.bridgedb.org/ops#isSymmetric" typeof="owl:DatatypeProperty">
-<h3 property="rdfs:label">Is Symettric</h3>
+<h3 property="rdfs:label">Is Symmmetric</h3>
+<code property="skos:prefLabel">bdb:isSymmetric</code>
 <p>This property has
   <a property="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean">XSD boolean</a>
   as range.</p>
 </div>
+
 <div id="urnBase" about="http://vocabularies.bridgedb.org/ops#urnBase" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">URN Base</h3>
+<code property="skos:prefLabel">bdb:urnBase</code>
 <p>This property has
   <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#DataSource">Data Source</a>
   as domain.</p>
 </div>
+
 <div id="various" about="http://vocabularies.bridgedb.org/ops#various" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Various</h3>
+<code property="skos:prefLabel">bdb:various</code>
 </div>
+
 <div id="xrefPrefix" about="http://vocabularies.bridgedb.org/ops#xrefPrefix" typeof="owl:DatatypeProperty">
 <h3 property="rdfs:label">Xref Prefix</h3>
+<code property="skos:prefLabel">bdb:xrefPrefix</code>
+<p>This property has
+  <a property="rdfs:domain" href="http://vocabularies.bridgedb.org/ops#CodeMapper">Code Mapper</a>
+  as domain.</p>
 </div>
 
 </section>
