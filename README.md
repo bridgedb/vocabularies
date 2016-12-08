@@ -1,15 +1,24 @@
-# the BridgeDb vocabulary
-Source files for the BridgeDb ontology
+# The BridgeDb vocabulary
+Source files for the BridgeDb ontology, available at http://vocabularies.bridgedb.org/ops
 
-The ontology is available at http://vocabularies.bridgedb.org/ops
+## Installation
 
-## installation
+The ontology is installed by adding two files to `/var/www/vocabularies.bridgedb.org`:
 
-The ontology is installed by copying the index.html to /var/www/vocabularies.bridgedb.org
+1) .htaccess file to ensure rewriting of `/ops#` to `/index.php#`, ensuring dereferencibility:
 
-The .htaccess ensures rewriting of /ops# to /index.html# ensuring the dereferencibility:
+    RewriteRule ^ops#(.*)$ index.php#$1
 
-    RewriteRule ^ops#(.*)$ index.html#$1
+2) A PHP file to get index.html from the master branch of this repo and display it:
+
+```php
+<?php
+  $vocabUrl = "https://raw.githubusercontent.com/bridgedb/vocabulary/master/index.html";
+  $vocabLines = file($vocabUrl);
+  $vocab=implode('',$vocabLines);
+  echo $vocab;
+?>
+```
 
 ## HTML and RDFa validation
 
