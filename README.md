@@ -5,11 +5,11 @@ Source files for the BridgeDb ontology, available at http://vocabularies.bridged
 
 The ontology is installed by adding two files to `/var/www/vocabularies.bridgedb.org`:
 
-1) .htaccess file to ensure rewriting of `/ops#` to `/index.php#`, ensuring dereferencibility:
+1) `.htaccess` file to ensure rewriting of `/ops#` to `/index.php#`, ensuring dereferencibility:
 
     RewriteRule ^ops#(.*)$ index.php#$1
 
-2) A PHP file to get index.html from the master branch of this repo and display it:
+2) `index.php` file to get the latest version of index.html from the master branch of this repo and display it:
 
 ```php
 <?php
@@ -19,6 +19,12 @@ The ontology is installed by adding two files to `/var/www/vocabularies.bridgedb
   echo $vocab;
 ?>
 ```
+
+## Updating
+
+If you know your update should take effect immediately, commit it to the `master` branch of this repo. Otherwise, commit it to another branch like `dev` and get confirmation regarding your proposed changes.
+
+The file `index.php` referenced above will automatically always display the latest version committed to `master`.
 
 ## HTML and RDFa validation
 
