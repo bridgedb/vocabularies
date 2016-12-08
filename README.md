@@ -22,7 +22,7 @@ The ontology is installed by adding two files to `/var/www/vocabularies.bridgedb
 
 ## Updating
 
-If you know your update should take effect immediately, commit it to the `master` branch of this repo. Otherwise, commit it to another branch like `dev` and get confirmation regarding your proposed changes.
+If you know your update should take effect immediately, commit it to the `master` branch of this repo. Otherwise, commit it to another branch like `dev` and get confirmation regarding your proposed changes before merging them into `master`.
 
 The file `index.php` referenced above will automatically always display the latest version committed to `master`.
 
