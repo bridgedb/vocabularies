@@ -1,5 +1,5 @@
 # The BridgeDb vocabulary
-Source files for the BridgeDb ontology, available at http://vocabularies.bridgedb.org/ops
+Source files for the BridgeDb ontology, available at http://vocabularies.bridgedb.org/
 
 ## Installation
 
